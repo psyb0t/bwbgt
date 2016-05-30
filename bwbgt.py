@@ -10,8 +10,7 @@ from time import time, sleep
 TASK_DIR = '/tmp/.bwbgp-task-queue'
 
 if not os.path.isdir(TASK_DIR):
-    if not os.makedirs(TASK_DIR):
-        raise Exception('Could not find or create task directory')
+    os.makedirs(TASK_DIR)
 
 
 def add_task(func, args=[]):
